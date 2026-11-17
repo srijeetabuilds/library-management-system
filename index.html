@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Library Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>📚 Library Management System</h1>
+  </header>
+
+  <nav id="menu" aria-label="Menu">
+    <button data-tab="add" class="active">Add Book</button>
+    <button data-tab="books">All Books</button>
+    <button data-tab="search">Search</button>
+    <button data-tab="issue">Issue</button>
+    <button data-tab="return">Return</button>
+    <button data-tab="issued">Issued Books</button>
+  </nav>
+
+  <main>
+    <p id="flash" role="status" hidden></p>
+
+    <!-- Task 1 -->
+    <section id="tab-add" class="card">
+      <h2>Add a new book</h2>
+      <form id="form-add">
+        <label>Book ID <input name="id" required></label>
+        <label>Book title <input name="title" required></label>
+        <label>Author name <input name="author" required></label>
+        <label>Publication year <input name="year" inputmode="numeric" required></label>
+        <label>Number of available copies <input name="copies" inputmode="numeric" required></label>
+        <button type="submit">Add book</button>
+      </form>
+    </section>
+
+    <!-- Task 2 -->
+    <section id="tab-books" class="card" hidden>
+      <h2>All books</h2>
+      <div id="books-table"></div>
+    </section>
+
+    <!-- Task 3 -->
+    <section id="tab-search" class="card" hidden>
+      <h2>Search for a book</h2>
+      <label>Book ID or title <input id="search-input" type="search" placeholder="Start typing…" autocomplete="off"></label>
+      <div id="search-table"></div>
+    </section>
+
+    <!-- Task 4 -->
+    <section id="tab-issue" class="card" hidden>
+      <h2>Issue a book</h2>
+      <form id="form-issue">
+        <label>Book ID <input name="bookId" required></label>
+        <label>Student ID <input name="studentId" required></label>
+        <button type="submit">Issue book</button>
+      </form>
+    </section>
+
+    <!-- Task 5 -->
+    <section id="tab-return" class="card" hidden>
+      <h2>Return a book</h2>
+      <form id="form-return">
+        <label>Book ID <input name="bookId" required></label>
+        <label>Student ID <input name="studentId" required></label>
+        <button type="submit">Return book</button>
+      </form>
+    </section>
+
+    <!-- Task 6 -->
+    <section id="tab-issued" class="card" hidden>
+      <h2>Currently issued books</h2>
+      <div id="issued-table"></div>
+    </section>
+  </main>
+
+  <script src="library.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
